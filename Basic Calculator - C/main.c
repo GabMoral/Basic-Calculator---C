@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//Checks for valid operator input
 int opCheck(char* op) {
 	switch (*op) {
 	case '+':
@@ -13,6 +13,7 @@ int opCheck(char* op) {
 		return 0;
 	}
 }
+//Calculates the numbers entered based on operator entered
 void calculate(char* op, float num1, float num2, float* result) {
 	int isNum1Int, isNum2Int;
 	switch (*op) {
@@ -38,6 +39,7 @@ void calculate(char* op, float num1, float num2, float* result) {
 		break;
 	}
 }
+//Gets number from user
 void getNum(float* num) {
 	int numRead;
 	do {
@@ -48,6 +50,7 @@ void getNum(float* num) {
 		scanf("%*[^\n]");	//read past invalid input
 	} while (numRead != 1);
 }
+//Gets operator from user
 void getOp(char* op) {
 	int opRead;
 	do {
@@ -60,6 +63,7 @@ void getOp(char* op) {
 		scanf("%*[^\n]");
 	} while (opRead != 1);
 }
+//Prints result
 void print(char error, float result) {
 	switch (error) {
 	case 'M':
